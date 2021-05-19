@@ -1,0 +1,100 @@
+body{
+    background-color: #fce38a;
+    font-family: 'Ubuntu', 'Trebuchet MS', Helvetica, sans-serif;  
+}
+.card{
+    border-radius: 15px;
+    box-shadow: 0px 0px 7.5px rgb(50,50,50);
+    position: relative;
+}
+.image,.image>img{
+    border-radius: inherit;
+}
+.my i{
+    width: 100%;
+    height: auto;
+}
+/* hover on cards transition */
+.moreDetailsDiv{
+    position: absolute;
+    background-color: #f38181;
+    color:white;
+    width: 0;
+    height: 0;
+    transition: 0.2s linear;
+    overflow: auto;
+    border-radius: inherit;
+}
+.card:hover .moreDetailsDiv{
+    width: 100%;
+    height: 100%;
+}
+.fade{
+    width: 100%;
+    height: 100%;
+}
+#logo{
+    display: none;
+    font-family: 'Reggae One', cursive;;
+}
+#search{
+    display: none;
+}
+#noRecipes{
+    display: none;
+}
+#footer{
+    background-color: #f38181;
+    color:white;
+    display: none;
+}
+/* Remove some default styles of hyperlinks */
+a, a:link, a:hover, a:visited, a:active{
+    text-decoration: none;
+    color: black;
+}
+footer>p{
+    border: 1px solid white;
+    border-radius: 10px;
+}
+/* Position the preloader to the center of the page(horizontally) */
+#pre{
+    position: relative;
+    height: 75vh;
+    width: 100%;
+}
+#preloader{
+    position: absolute;
+    width: 50%;
+    /* height: 50%; */
+    transform: translate(50%, 50%);
+}
+.modal-content{
+    background-color: #fce38a;
+}
+.modal-header,.modal-body,.modal-footer{
+    border: 0;
+}
+.modal-body{
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+.btn-close:focus{
+    box-shadow: none;
+    border: 3px solid black;
+}
+#searchInput:focus{
+    box-shadow: none;
+    border: 0px;
+}
+#searchInput{
+    border: 2px solid black;
+}
+#regionName{
+    display: none;
+}
+.btn,.btn:active,.btn:focus{
+    border: 2px solid black;
+    outline: none;
+    box-shadow: none;
+}

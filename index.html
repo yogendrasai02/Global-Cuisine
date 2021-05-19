@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/06f78b31c2.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+
+    <title>Global Cuisine</title>
+</head>
+
+<body onload="typeWriter()">
+
+    <!-- Preloader -->
+    <div class="container" id="pre">
+        <div id="preloader">
+            <div class="text-center">It may take a few seconds...</div>
+            <div class="text-center"><img src="hourglass.gif" alt="hourglass"></div>
+            <div>
+                <h1 class="text-center">Loading...</h1>
+                <h1 id="output" class="text-center"></h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="container" id="logo">
+        <div class="w-100 ms-auto me-auto">
+            <a href="#">
+                <h1 class="text-center display-1" class="logoText" onclick="location.reload()">Global Cuisine</h1>
+            </a>
+            <a href="#">
+                <p class="text-center" class="logoText">Global recipes under one page</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- container for recipe cards -->
+    <div class="container mt-4 mb-4" id="allOutputs">
+
+        <!-- Search filter -->
+        <div class="form-floating mb-3" id="search">
+            <input type="text" class="form-control" id="searchInput" placeholder="Chicken"
+                onkeyup="filterRecipes('input')">
+            <label for="searchInput">Search by recipe name</label>
+        </div>
+
+        <!-- Filter based on tags(region) -->
+        <div id="filterButtons" class="mb-2">
+            <h3 id="regionName">Or Filter recipes by country : </h3>
+        </div>
+
+        <!-- Output cards -->
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4" id="recipes"></div>
+
+    </div>
+
+    <!-- More details modal -->
+    <div class="modal fade" id="moreDetailsModal" tabindex="-1" aria-labelledby="recipeTitle" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title display-2" id="recipeTitle"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-10 col-12 me-auto ms-auto">
+                                <h4 id="region"></h4>
+                                <h4 id="tags"></h4>
+                                <table class="table table-bordered table-striped table-hover border-dark" id="items">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Ingredient</th>
+                                            <th scope="col">Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <h4>Instructions</h4>
+                                <p id="instructions"></p>
+                                <a class="btn btn-info" target="_blank" id="youtubeVideo">View Youtube
+                                    video</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-bs-dismiss="modal">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This div is shown when user tries to filter, but no recipes are present -->
+    <div class="container mt-4 mb-4" id="noRecipes">
+        <div class="row">
+            <div class="col w-100 ms-auto me-auto">
+                <h1 class="text-center">Sorry, no recipes found</h1>
+                <p class="text-center">Try searching "chicken"</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container mt-4 p-4" id="footer">
+        <footer class="text-center">
+            <a href="#" style="text-align: right;"><span class="badge bg-info text-dark">Goto top</span></a>
+            <br>
+            <a style="color: white;" href="https://www.github.com" target="_blank">View the code on github
+                <span class="btn btn-info">Here</span></a>
+            <p class="mt-2">
+                Thanks to "TheMealDB"
+            </p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <!-- JavaScript file link -->
+    <script src="index.js"></script>
+</body>
+
+</html>
